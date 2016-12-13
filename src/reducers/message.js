@@ -7,7 +7,7 @@ const setMessage = R.set(R.lensProp('message'))
 
 const message = setupReducer()
 	.on(types.EDIT_MESSAGE, function (action, oldState) {
-		console.log(action)
+
 		return setMessage(action.newMessage)
 	})
 

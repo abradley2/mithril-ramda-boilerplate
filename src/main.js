@@ -5,7 +5,6 @@ const store = require('./store')
 const Home = require('./components/Home')
 
 document.addEventListener('DOMContentLoaded', function () {
-	console.loge('START')
 
 	const appContainer = document.createElement('div')
 

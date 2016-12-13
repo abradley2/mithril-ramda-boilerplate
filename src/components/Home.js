@@ -9,7 +9,7 @@ const actions = {
 	editMessage: function (newMessage) {
 		store.dispatchAction({
 			type: types.EDIT_MESSAGE,
-			message: newMessage
+			newMessage: newMessage
 		})
 	}
 }
@@ -26,13 +26,10 @@ function Home (ctrl, args) {
 		store.getState().message
 	)
 
-	console.log('arRW', store.getState())
-
-	return m('div' + css(styles.somePadding), [
+	return m('div.' + css(styles.somePadding), [
 		m('input', {
 			value: message,
-			onchange: function (e) {
-				console.log(e.target.value)
+			oninput: function (e) {
 				actions.editMessage(e.target.value)
 			}
 		}),

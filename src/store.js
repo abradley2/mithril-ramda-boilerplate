@@ -10,7 +10,6 @@ const reducers = [
 const store = m.prop({})
 
 function dispatchAction (action) {
-	console.log('dispatch', action)
 	if (!action) throw new TypeError('did not dispatch valid action')
 
 	if (action.constructor === Function) return action(dispatchAction)
