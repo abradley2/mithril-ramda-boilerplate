@@ -3,13 +3,14 @@
 	"extends": "eslint:recommended",
 
 	"env": {
-		"browser": true
+		"browser": true,
+        "commonjs": true,
+        "es6": true
 	},
 
 	"rules": {
 		"indent": [2, "tab"],
 		"no-trailing-spaces": 2,
-		"linebreak-style": [2, "windows"],
 		"curly": [2, "multi-line"],
 		"dot-location": [2, "property"],
 		"dot-notation": [2, {"allowKeywords": false}],
@@ -17,7 +18,7 @@
 		"no-alert": 2,
 		"no-caller": 2,
 		"guard-for-in": 2,
-		"no-empty-label": 2,
+		"no-labels": 2,
 		"no-eval": 2,
 		"no-extend-native": 2,
 		"no-extra-bind": 2,
@@ -43,7 +44,6 @@
 		"no-warning-comments": 1,
 		"radix": 2,
 		"wrap-iife": [2, "inside"],
-		"strict": [2, "function"],
 		"no-catch-shadow": 2,
 		"no-label-var": 2,
 		"no-shadow-restricted-names": 2,
@@ -73,21 +73,20 @@
 		"operator-linebreak": [2, "after"],
 		"padded-blocks": [2, "never"],
 		"quote-props": [2, "as-needed", {"keywords": true}],
-		"quotes": [2, "double", "avoid-escape"],
+		"quotes": [2, "single", "avoid-escape"],
 		"semi-spacing": 0,
 		"semi": [2, "never"],
-		"space-after-keywords": 2,
+		"keyword-spacing": 2,
 		"space-before-function-paren": [2, {
 			"anonymous": "always",
-			"named": "never"
+			"named": "always"
 		}],
-		"space-before-keywords": 2,
 		"space-in-parens": 2,
 		"space-infix-ops": [2, {"int32Hint": true}],
 		"space-unary-ops": 2,
 		"spaced-comment": [2, "always"],
 		"max-depth": [2, 4],
-		"max-len": [2, 80, 4],
+		"max-len": [2, 90, 4],
 		"max-statements": [2, 20]
 	}
 }

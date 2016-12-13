@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 	}
 })
 
-function Home (ctrl, args) {
+function Home () {
 	const message = R.defaultTo(
 		'Hello World!',
 		store.getState().message

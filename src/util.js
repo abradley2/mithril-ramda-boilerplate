@@ -1,6 +1,7 @@
 const R = require('ramda')
 
 exports.setupReducer = function setupReducer (initialState, handlers) {
+	'use strict'
 	return {
 		on: function (actionType, handler) {
 			if (!actionType) throw new TypeError('actionType must be valid')

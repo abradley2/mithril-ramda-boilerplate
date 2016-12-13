@@ -1,6 +1,5 @@
 const m = require('mithril')
 const R = require('ramda')
-const util = require('./util')
 const message = require('./reducers/message')
 
 const reducers = [
