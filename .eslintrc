@@ -1,14 +1,12 @@
-// https://raw.githubusercontent.com/lhorie/mithril.js/next/.eslintrc
 {
 	"extends": "eslint:recommended",
-
 	"env": {
 		"browser": true,
-        "commonjs": true,
-        "es6": true
+		"commonjs": true,
+		"es6": true
 	},
-
 	"rules": {
+		"no-console": 1,
 		"indent": [2, "tab"],
 		"no-trailing-spaces": 2,
 		"curly": [2, "multi-line"],

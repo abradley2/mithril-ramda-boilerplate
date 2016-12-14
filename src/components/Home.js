@@ -1,18 +1,8 @@
 const m = require('mithril')
-const R = require('ramda')
 const StyleSheet = require('aphrodite').StyleSheet
 const css = require('aphrodite').css
 const types = require('../types')
 const store = require('../store')
-
-const actions = {
-	editMessage: function (newMessage) {
-		store.dispatchAction({
-			type: types.EDIT_MESSAGE,
-			newMessage: newMessage
-		})
-	}
-}
 
 const styles = StyleSheet.create({
 	somePadding: {
@@ -20,21 +10,28 @@ const styles = StyleSheet.create({
 	}
 })
 
-function Home () {
-	const message = R.defaultTo(
-		'Hello World!',
-		store.getState().message
-	)
+function Home (ctrl) {
+	const messageState = store.getState().message
 
 	return m('div.' + css(styles.somePadding), [
 		m('input', {
-			value: message,
-			oninput: function (e) {
-				actions.editMessage(e.target.value)
-			}
+			value: messageState.text,
+			oninput: m.withAttr('value', ctrl.editText)
 		}),
-		m('h3', message)
+		m('h3', messageState.text)
 	])
 }
 
-module.exports = {view: Home}
+module.exports = {
+	controller: function () {
+		return {
+			editText: function (text) {
+				store.dispatchAction({
+					type: types.EDIT_MESSAGE,
+					text: text
+				})
+			}
+		}
+	},
+	view: Home
+}

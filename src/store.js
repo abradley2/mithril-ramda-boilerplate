@@ -1,5 +1,6 @@
 const m = require('mithril')
 const R = require('ramda')
+const types = require('./types')
 const message = require('./reducers/message')
 
 const reducers = [
@@ -7,6 +8,10 @@ const reducers = [
 ]
 
 const store = m.prop({})
+
+function getState () {
+	return store()
+}
 
 function dispatchAction (action) {
 	if (!action) throw new TypeError('did not dispatch valid action')
@@ -34,9 +39,9 @@ function dispatchAction (action) {
 	))
 }
 
+dispatchAction({type: types.__INIT__})
+
 module.exports = {
 	dispatchAction: dispatchAction,
-	getState: function () {
-		return store()
-	}
+	getState: getState
 }
