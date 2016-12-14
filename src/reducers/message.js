@@ -10,7 +10,6 @@ const initialState = {
 
 const message = setupReducer()
 	.on(types.__INIT__, function () {
-		console.log('initialize the message store')
 		return setMessage(initialState)
 	})
 	.on(types.EDIT_MESSAGE, function (action, oldState) {
