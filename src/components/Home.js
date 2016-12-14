@@ -22,16 +22,18 @@ function Home (ctrl) {
 	])
 }
 
-module.exports = {
-	controller: function () {
-		return {
-			editText: function (text) {
-				store.dispatchAction({
-					type: types.EDIT_MESSAGE,
-					text: text
-				})
-			}
+function HomeCtrl () {
+	return {
+		editText: function (text) {
+			store.dispatchAction({
+				type: types.EDIT_MESSAGE,
+				text: text
+			})
 		}
-	},
+	}
+}
+
+module.exports = {
+	controller: HomeCtrl,
 	view: Home
 }
